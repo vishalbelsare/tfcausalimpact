@@ -26,10 +26,14 @@ import pytest
 import tensorflow as tf
 import tensorflow_probability as tfp
 from numpy.testing import assert_array_equal
-from pandas.util.testing import assert_frame_equal
+from pandas.testing import assert_frame_equal
 
 from causalimpact import CausalImpact
 from causalimpact.misc import standardize
+
+seed = 123
+tf.random.set_seed(seed)
+np.random.seed(seed)
 
 
 def test_default_causal_cto(rand_data, pre_int_period, post_int_period):

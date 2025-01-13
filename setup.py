@@ -47,11 +47,12 @@ if sys.argv[-1] == 'publish':
 
 install_requires = [
     'jinja2',
-    'pandas <= 1.3.5',
-    'tensorflow',
-    'tensorflow-probability == 0.14.0',
+    'pandas >= 1.3.5, <= 2.2',
+    'tensorflow >= 2.10',
+    'tensorflow-probability[tf] >= 0.18, <= 0.25',
     'matplotlib',
 ]
+
 tests_require = [
     'pytest',
     'pytest-cov',
@@ -109,16 +110,17 @@ setup(
         'Operating System :: POSIX :: Linux',
         'Operating System :: MacOS',
         'Operating System :: Microsoft :: Windows',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
+        'Programming Language :: Python :: 3.12',
         'Programming Language :: Python :: Implementation :: CPython',
         'Topic :: Scientific/Engineering',
     ],
     project_urls={
         'Source': 'https://github.com/WillianFuks/tfcausalimpact'
     },
-    python_requires='>=3, <3.10',
+    python_requires='>=3, <3.13',
     test_suite='tests'
 )
